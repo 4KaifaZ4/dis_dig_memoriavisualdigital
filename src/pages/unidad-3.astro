@@ -1,0 +1,781 @@
+---
+import Header from '../components/Header.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import MapaMental from '../components/MapaMental.astro';
+import GlosarioPopup from '../components/GlosarioPopup.astro';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Unidad 3: Accesibilidad Web</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Principios de accesibilidad web, estándares WCAG y diseño inclusivo">
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- Íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Meta para accesibilidad -->
+  <meta name="theme-color" content="#10b981">
+</head>
+<body>
+  <Header />
+  
+  <main class="container">
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Accesibilidad Web</h1>
+        <p class="hero-subtitle">Diseñando para todos: estándares WCAG y prácticas inclusivas</p>
+        <div class="hero-badges">
+          <span class="wcag-badge">WCAG 2.1</span>
+          <span class="wcag-badge">AA</span>
+          <span class="wcag-badge">AAA</span>
+        </div>
+      </div>
+      <div class="accessibility-marks">
+        <i class="fas fa-universal-access"></i>
+        <i class="fas fa-eye"></i>
+        <i class="fas fa-ear-deaf"></i>
+        <i class="fas fa-wheelchair"></i>
+      </div>
+
+      <div class="video-wrapper">\
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube-nocookie.com/embed/m67d6q_oYHo?si=etHPodfmRF6IKLe-" 
+            title="YouTube video player" 
+            frameborder="2" 
+            allow="accelerometer;
+            autoplay; 
+            clipboard-write; 
+            encrypted-media; 
+            gyroscope; 
+            picture-in-picture; 
+            web-share" referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+
+      </div>
+
+    </section>
+
+    <!-- ===== TEMAS PRINCIPALES ===== -->
+    <section class="topics-section">
+      <h2 class="section-title"><span>Temas Clave</span></h2>
+      <div class="topics-grid">
+        
+        <!-- Tarjeta 1 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-list-check topic-icon" aria-hidden="true"></i>
+            <span class="card-badge">Estándares</span>
+          </div>
+          <h3>Pautas WCAG 2.1</h3>
+          <p>Niveles A, AA, AAA y su implementación en componentes web.</p>
+          <ul class="card-highlights" aria-label="Ejemplos WCAG">
+            <li>Texto alternativo en imágenes</li>
+            <li>Contraste 4.5:1 mínimo</li>
+            <li>Navegación por teclado</li>
+          </ul>
+        </article>
+        
+        <!-- Tarjeta 2 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-tools topic-icon" aria-hidden="true"></i>
+            <span class="card-badge">Evaluación</span>
+          </div>
+          <h3>Herramientas de Validación</h3>
+          <p>Wave, Axe DevTools y pruebas con lectores de pantalla.</p>
+          <ul class="card-highlights">
+            <li>NVDA</li>
+            <li>VoiceOver</li>
+            <li>TalkBack</li>
+          </ul>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-hands-helping topic-icon" aria-hidden="true"></i>
+            <span class="card-badge">Inclusión</span>
+          </div>
+          <h3>Diseño Universal</h3>
+          <p>Enfoque para discapacidades visuales, motoras y cognitivas.</p>
+          <ul class="card-highlights">
+            <li>Modo alto contraste</li>
+            <li>Control por voz</li>
+            <li>Simplificación cognitiva</li>
+          </ul>
+        </article>
+
+        <!-- Tarjeta 4 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-text-height topic-icon" aria-hidden="true"></i>
+            <span class="card-badge">Legibilidad</span>
+          </div>
+          <h3>Contraste y Tipografía</h3>
+          <p>Ratios de color, fuentes accesibles y tamaño mínimo.</p>
+          <ul class="card-highlights">
+            <li>4.5:1 texto normal</li>
+            <li>3:1 texto grande</li>
+            <li>Fuentes sans-serif</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <MapaMental 
+    unit={3}
+    caption="Mapa interactivo - Haz zoom para detalles"
+    class="mi-estilo-personalizado"
+    />
+
+    <!-- ===== GLOSARIO VISUAL ===== -->
+    <section class="glossary">
+      <h2 class="section-title"><span>Glosario Visual</span></h2>
+      <div class="glossary-grid">
+        
+        <!-- Término 1 -->
+        <div class="term-card" tabindex="0">
+          <div class="term-header">
+            <i class="fas fa-list-check term-icon" aria-hidden="true"></i>
+            <h3>WCAG</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Pautas de Accesibilidad para Contenido Web (Web Content Accessibility Guidelines).</p>
+            <p><strong>Ejemplo:</strong> Nivel AA requerido en sitios gubernamentales de la UE.</p>
+            <p class="term-history"><strong>Versión actual:</strong> WCAG 2.1 (2018)</p>
+          </div>
+        </div>
+        
+        <!-- Término 2 -->
+        <div class="term-card" tabindex="0">
+          <div class="term-header">
+            <i class="fas fa-code term-icon" aria-hidden="true"></i>
+            <h3>ARIA</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Conjunto de atributos para mejorar la semántica en tecnologías asistivas.</p>
+            <p><strong>Ejemplo:</strong> <code>aria-label="Menú principal"</code></p>
+            <p class="term-history"><strong>Uso:</strong> Complementa HTML semántico</p>
+          </div>
+        </div>
+        
+        <!-- Término 3 -->
+        <div class="term-card" tabindex="0">
+          <div class="term-header">
+            <i class="fas fa-keyboard term-icon" aria-hidden="true"></i>
+            <h3>Focus Trap</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Técnica para mantener el foco dentro de un componente modal.</p>
+            <p><strong>Ejemplo:</strong> Ventanas emergentes que no permiten fugar el foco.</p>
+            <p class="term-history"><strong>Importancia:</strong> Crítico para navegación por teclado</p>
+          </div>
+        </div>
+        
+        <!-- Término 4 -->
+        <div class="term-card" tabindex="0">
+          <div class="term-header">
+            <i class="fas fa-text-height term-icon" aria-hidden="true"></i>
+            <h3>Contraste</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Relación de luminancia entre texto y fondo.</p>
+            <p><strong>Ejemplo:</strong> 4.5:1 para texto normal (WCAG AA).</p>
+            <p class="term-history"><strong>Herramienta:</strong> Color Contrast Analyzer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GLOSARIO VISUAL - ACCESIBILIDAD ===== -->
+<section class="glossary">
+  <h2 class="section-title"><span></span></h2>
+  <div class="glossary-grid">
+    
+    <!-- Término 5 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-universal-access term-icon" aria-hidden="true"></i>
+        <h3>Diseño Inclusivo</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Metodología que considera la diversidad humana en el proceso de diseño.</p>
+        <p><strong>Ejemplo:</strong> Controles de videojuegos configurables para diferentes habilidades motoras.</p>
+        <p class="term-history"><strong>Beneficio:</strong> Mejora la experiencia para todos los usuarios.</p>
+      </div>
+    </div>
+    
+    <!-- Término 6 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-head-side-virus term-icon" aria-hidden="true"></i>
+        <h3>Discapacidad Contextual</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Limitaciones temporales causadas por el entorno o situación.</p>
+        <p><strong>Ejemplo:</strong> Dificultad para usar pantallas táctiles con guantes.</p>
+        <p class="term-history"><strong>Dato:</strong> 71% de usuarios experimentan discapacidad contextual.</p>
+      </div>
+    </div>
+    
+    <!-- Término 7 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-route term-icon" aria-hidden="true"></i>
+        <h3>Navegación por Teclado</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Capacidad de operar una interfaz solo con teclado.</p>
+        <p><strong>Ejemplo:</strong> Usar TAB para recorrer elementos interactivos.</p>
+        <p class="term-history"><strong>WCAG:</strong> Requisito 2.1.1 (Nivel A).</p>
+      </div>
+    </div>
+    
+    <!-- Término 8 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-eye-slash term-icon" aria-hidden="true"></i>
+        <h3>Screen Reader</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Software que interpreta y vocaliza contenido digital.</p>
+        <p><strong>Ejemplo:</strong> JAWS, NVDA, VoiceOver.</p>
+        <p class="term-history"><strong>Uso:</strong> 2.3% de usuarios con discapacidad visual los utilizan.</p>
+      </div>
+    </div>
+    
+    <!-- Término 9 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-closed-captioning term-icon" aria-hidden="true"></i>
+        <h3>Subtítulos Cerrados</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Texto sincronizado que transcribe audio e incluye sonidos relevantes.</p>
+        <p><strong>Ejemplo:</strong> [Música tensa] [Risa del público].</p>
+        <p class="term-history"><strong>Estándar:</strong> Requerido por WCAG 1.2.2 (Nivel A).</p>
+      </div>
+    </div>
+    
+    <!-- Término 10 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-sitemap term-icon" aria-hidden="true"></i>
+        <h3>Estructura Semántica</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Uso adecuado de elementos HTML para transmitir significado.</p>
+        <p><strong>Ejemplo:</strong> <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>.</p>
+        <p class="term-history"><strong>Impacto:</strong> Mejora la navegación con lectores de pantalla en 40%.</p>
+      </div>
+    </div>
+    
+    <!-- Término 11 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-puzzle-piece term-icon" aria-hidden="true"></i>
+        <h3>Progressive Enhancement</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Estrategia que prioriza contenido accesible antes que características avanzadas.</p>
+        <p><strong>Ejemplo:</strong> Sitio funcional sin JavaScript.</p>
+        <p class="term-history"><strong>Filosofía:</strong> "Capa" la accesibilidad desde el núcleo.</p>
+      </div>
+    </div>
+    
+    <!-- Término 12 -->
+    <div class="term-card" tabindex="0">
+      <div class="term-header">
+        <i class="fas fa-text-width term-icon" aria-hidden="true"></i>
+        <h3>Plain Language</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Comunicación clara y directa que minimiza la carga cognitiva.</p>
+        <p><strong>Ejemplo:</strong> "Pague su factura" en lugar de "Proceda al abono del documento".</p>
+        <p class="term-history"><strong>WCAG:</strong> Principio 3.1 (Comprensible).</p>
+      </div>
+    </div>
+  </div>
+  
+  
+</section>
+
+    <!-- ===== REFLEXIÓN ===== -->
+    <section class="reflection">
+      <div class="reflection-card">
+        <h2 class="section-title"><span>Reflexión</span></h2>
+        <blockquote>
+          "La verdadera accesibilidad no se mide por el cumplimiento de estándares, sino por la eliminación de barreras para la participación plena en la experiencia digital."
+        </blockquote>
+        <div class="reflection-author">
+          <div class="author-meta">
+            <strong>Lección clave:</strong>
+            <p>El diseño accesible beneficia a todos los usuarios, no solo a aquellos con discapacidades.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2024 Diseño Digital Avanzado - Accesibilidad Web</p>
+      <div class="footer-links">
+        <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">
+          <i class="fas fa-external-link-alt"></i> W3C WAI
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== ESTILOS ===== -->
+  <style lang="scss">
+    :root {
+      --primary: #10b981;
+      --primary-light: #34d399;
+      --primary-dark: #0d9488;
+      --accent: #f59e0b;
+      --dark: #1e293b;
+      --darker: #0f172a;
+      --light: #f8fafc;
+      --lighter: #ffffff;
+      --gray: #94a3b8;
+      --gray-light: #e2e8f0;
+    }
+
+    /* Base accesible */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      margin: 0;
+      background-color: var(--light);
+      font-size: 1.1rem;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+      color: var(--darker);
+    }
+
+    /* Focus visible para accesibilidad */
+    a, button, [tabindex="0"] {
+      &:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--lighter);
+      padding: 4rem 2rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin: 1rem auto 2rem;
+      max-width: 600px;
+    }
+
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .wcag-badge {
+      background: rgba(255,255,255,0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .accessibility-marks {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      font-size: 2rem;
+      opacity: 0.8;
+    }
+
+    /* Sección títulos */
+    .section-title {
+      text-align: center;
+      margin: 3rem 0 2rem;
+      position: relative;
+
+      span {
+        background: var(--lighter);
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gray-light);
+        z-index: 1;
+      }
+    }
+
+    /* Grid de Temas */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .topic-card {
+      background: var(--lighter);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid var(--gray-light);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
+      border-color: var(--primary-light);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .topic-icon {
+      font-size: 1.75rem;
+      color: var(--primary);
+    }
+
+    .card-badge {
+      background: var(--primary-light);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .topic-card h3 {
+      margin: 0.5rem 0 1rem;
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+    }
+
+    .card-highlights {
+      margin-top: auto;
+      padding-top: 1rem;
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+
+      li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: "•";
+          color: var(--accent);
+          position: absolute;
+          left: 0;
+          font-weight: bold;
+        }
+      }
+    }
+
+    /* Mapa Conceptual */
+    .map-container {
+      background: var(--lighter);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-light);
+    }
+
+    .map-legend {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .legend-items {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .legend-color {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 0.5rem;
+
+      &.standards { background: #10b981; }
+      &.tools { background: #3b82f6; }
+      &.practices { background: #f59e0b; }
+    }
+
+    .map-image {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .map-caption {
+      text-align: center;
+      font-style: italic;
+      color: var(--gray);
+      margin-top: 1rem;
+    }
+
+    /* Glosario */
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin: 3rem 0;
+    }
+
+    .term-card {
+      background: var(--lighter);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-light);
+      transition: all 0.3s ease;
+    }
+
+    .term-card:focus, .term-card:hover {
+      box-shadow: 0 5px 15px rgba(16, 185, 129, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .term-header {
+      background: var(--primary);
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .term-icon {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .term-card h3 {
+      color: white;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .term-body {
+      padding: 1.25rem;
+    }
+
+    .term-body p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .term-history {
+      font-size: 0.85rem;
+      color: var(--dark);
+      background: var(--gray-light);
+      padding: 0.5rem;
+      border-radius: 4px;
+      margin-top: 1rem !important;
+    }
+
+    /* Botón */
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 3rem auto 0;
+      transition: all 0.3s;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Reflexión */
+    .reflection-card {
+      background: var(--darker);
+      color: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reflection blockquote {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      quotes: "“" "”" "‘" "’";
+    }
+
+    .reflection-author {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .author-meta {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      max-width: 400px;
+
+      strong {
+        color: var(--accent);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+      background: var(--darker);
+      color: white;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+
+      a {
+        color: var(--gray-light);
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .reflection-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .section-title span {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+
+  <!-- Script básico para funcionalidad -->
+  <script>
+    document.getElementById('abrirGlosario')?.addEventListener('click', () => {
+      alert('♿ Este botón activará el componente GlosarioPopup.astro con características accesibles');
+    });
+  </script>
+</body>
+</html>

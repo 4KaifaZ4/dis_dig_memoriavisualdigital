@@ -1,0 +1,12 @@
+// Si tiene solo esto, podemos mantenerlo:
+:root {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}

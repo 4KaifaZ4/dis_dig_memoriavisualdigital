@@ -1,0 +1,341 @@
+---
+// src/components/GlosarioPopup.astro
+
+// Props para personalización
+const { 
+  theme = 'light',  // 'light' | 'dark'
+  animation = 'scale',  // 'scale' | 'fade' | 'slide'
+  closeButton = true,
+  maxTerms = 15 
+} = Astro.props;
+
+// Datos del glosario (podrían venir de una API o CMS)
+const terms = [
+  { 
+    term: "Vectorización", 
+    definition: "Conversión de imágenes a formas matemáticas escalables.",
+    icon: "fas fa-vector-square",
+    example: "Logotipos en formato SVG"
+  },
+  { 
+    term: "CMYK", 
+    definition: "Modelo de color sustractivo para impresión (Cian, Magenta, Amarillo, Negro).",
+    icon: "fas fa-print",
+    example: "Diseño de folletos impresos"
+  },
+  // ... otros términos
+];
+---
+
+<div id="glosarioPopup" 
+     class={`popup ${theme}`} 
+     aria-hidden="true" 
+     role="dialog" 
+     aria-modal="true" 
+     aria-labelledby="glosarioTitulo"
+     data-animation={animation}>
+     
+  <div class="popup-content">
+    <!-- Botón de cierre mejorado -->
+    {closeButton && (
+      <button id="cerrarPopup" class="close-btn" aria-label="Cerrar glosario">
+        <i class="fas fa-times"></i>
+      </button>
+    )}
+    
+    <h2 id="glosarioTitulo">
+      <i class="fas fa-book-open"></i> Glosario Visual
+    </h2>
+    
+    <!-- Barra de búsqueda -->
+    <div class="search-bar">
+      <input type="text" 
+             id="buscarTermino" 
+             placeholder="Buscar término..." 
+             aria-label="Buscar en glosario">
+      <i class="fas fa-search"></i>
+    </div>
+    
+    <!-- Lista de términos con íconos -->
+    <ul class="glosario-lista">
+      {terms.slice(0, maxTerms).map((item) => (
+        <li class="termino">
+          <div class="term-header">
+            <i class={`${item.icon} term-icon`}></i>
+            <strong class="termino-nombre">{item.term}</strong>
+          </div>
+          <p class="termino-definicion">{item.definition}</p>
+          {item.example && (
+            <p class="termino-ejemplo">
+              <i class="fas fa-lightbulb"></i> <strong>Ejemplo:</strong> {item.example}
+            </p>
+          )}
+        </li>
+      ))}
+    </ul>
+    
+    <!-- Footer con créditos -->
+    <div class="popup-footer">
+      <small>
+        <i class="fas fa-info-circle"></i> {terms.length} términos disponibles
+      </small>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+.popup {
+  /* Variables de diseño */
+  --popup-bg-light: rgba(0, 0, 0, 0.7);
+  --popup-bg-dark: rgba(0, 0, 0, 0.9);
+  --content-bg-light: #FFFFFF;
+  --content-bg-dark: #1E293B;
+  --text-light: #1E293B;
+  --text-dark: #F8FAFC;
+  --primary-light: #2563EB;
+  --primary-dark: #60A5FA;
+  --border-radius: 16px;
+  --shadow-light: 0 12px 28px rgba(0, 0, 0, 0.2);
+  --shadow-dark: 0 12px 28px rgba(0, 0, 0, 0.4);
+  --transition-speed: 0.3s;
+
+  /* Estilos base */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+  backdrop-filter: blur(8px);
+
+  &.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+
+  /* Temas */
+  &.light {
+    background: var(--popup-bg-light);
+    .popup-content {
+      background: var(--content-bg-light);
+      color: var(--text-light);
+      box-shadow: var(--shadow-light);
+    }
+  }
+
+  &.dark {
+    background: var(--popup-bg-dark);
+    .popup-content {
+      background: var(--content-bg-dark);
+      color: var(--text-dark);
+      box-shadow: var(--shadow-dark);
+    }
+  }
+
+  &-content {
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow-y: auto;
+    
+    /* Animaciones */
+    &[data-animation="scale"] {
+      animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    &[data-animation="fade"] {
+      animation: fadeIn 0.4s ease;
+    }
+    
+    &[data-animation="slide"] {
+      animation: slideUp 0.4s ease;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+      color: var(--primary);
+    }
+  }
+
+  .search-bar {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .fa-search {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748B;
+    }
+  }
+}
+
+.glosario-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.termino {
+  padding: 1.25rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+
+  .term-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &-icon {
+    font-size: 1.25rem;
+    color: var(--primary);
+  }
+
+  &-nombre {
+    font-size: 1.1rem;
+    color: var(--primary);
+  }
+
+  &-definicion {
+    margin: 0.5rem 0 0 1.75rem;
+    line-height: 1.6;
+  }
+
+  &-ejemplo {
+    margin: 0.5rem 0 0 1.75rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.popup-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Animaciones */
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 95%;
+    padding: 1.25rem;
+    max-height: 90vh;
+  }
+  
+  .termino {
+    padding: 1rem;
+  }
+}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('glosarioPopup');
+  const closeBtn = document.getElementById('cerrarPopup');
+  const searchInput = document.getElementById('buscarTermino');
+  const terms = document.querySelectorAll('.termino');
+
+  // Funcionalidad de búsqueda
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      terms.forEach(term => {
+        const termText = term.textContent.toLowerCase();
+        term.style.display = termText.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+  }
+
+  // Control del popup
+  window.abrirGlosario = () => {
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (searchInput) searchInput.focus();
+  };
+
+  const cerrarPopup = () => {
+    popup.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // Event listeners
+  if (closeBtn) closeBtn.addEventListener('click', cerrarPopup);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('active')) {
+      cerrarPopup();
+    }
+  });
+
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) cerrarPopup();
+  });
+});
+</script>

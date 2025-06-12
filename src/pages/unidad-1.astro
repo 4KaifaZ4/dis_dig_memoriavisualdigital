@@ -1,0 +1,902 @@
+---
+import Header from '../components/Header.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import MapaMental from '../components/MapaMental.astro';
+import GlosarioPopup from '../components/GlosarioPopup.astro';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Unidad 1: Génesis de los Sistemas Gráficos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <Header />
+  
+  <main class="container">
+    <!-- Hero section mejorada -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Génesis de los Sistemas Gráficos</h1>
+        <p class="hero-subtitle">De los primeros píxeles a las interfaces modernas: un viaje por la historia visual digital</p>
+        <div class="hero-timeline">
+          <span>1960</span>
+          <div class="timeline-line"></div>
+          <span>2024</span>
+        </div>
+            <div class="video-wrapper">
+            <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube-nocookie.com/embed/tmxGL6JX460?si=R8xfcbBLClH_-mk4" 
+            title="YouTube video player" 
+            frameborder="2" 
+            allow="accelerometer; 
+            autoplay; clipboard-write; 
+            encrypted-media; gyroscope; 
+            picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+            </div>
+      </div>
+    </section>
+
+    <!-- Sección de Temas Principales mejorada -->
+    <section class="topics-section">
+      <h2 class="section-title"><span>Temas Principales</span></h2>
+      <div class="topics-grid">
+        <!-- Tarjeta 1 mejorada -->
+        <article class="topic-card">
+          <div class="card-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Historia de interfaces" class="topic-icon">
+            <span class="card-badge">Historia</span>
+          </div>
+          <h3>Evolución de Interfaces</h3>
+          <p>Desde Xerox PARC hasta el Flat Design: hitos clave en la interacción humano-computadora.</p>
+          <ul class="card-highlights">
+            <li>Sketchpad (1963) - Primer sistema gráfico</li>
+            <li>Macintosh (1984) - Popularización del GUI</li>
+            <li>Web 2.0 (2004) - Interfaces ricas en internet</li>
+            <li>Touch UI (2007) - Revolución móvil</li>
+          </ul>
+        </article>
+        
+        <!-- Tarjeta 2 mejorada -->
+        <article class="topic-card">
+          <div class="card-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Metáforas digitales" class="topic-icon">
+            <span class="card-badge">Conceptos</span>
+          </div>
+          <h3>Metáforas Digitales</h3>
+          <p>El escritorio, los archivos y otros conceptos físicos adaptados al mundo digital.</p>
+          <ul class="card-highlights">
+            <li>Metáfora del escritorio (Xerox Star)</li>
+            <li>Papelera de reciclaje (Apple Lisa)</li>
+            <li>Carpetas y documentos (Windows 95)</li>
+            <li>Ventanas múltiples (Mac OS)</li>
+          </ul>
+        </article>
+
+        <!-- Tarjeta 3 mejorada -->
+        <article class="topic-card">
+          <div class="card-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/1023/1023631.png" alt="Diseño de íconos" class="topic-icon">
+            <span class="card-badge">Semiótica</span>
+          </div>
+          <h3>Diseño de Íconos</h3>
+          <p>Principios de semiótica aplicada a pictogramas universales.</p>
+          <ul class="card-highlights">
+            <li>Reconocibilidad (ISO 7001)</li>
+            <li>Simplificación (Principio de reducción)</li>
+            <li>Contexto cultural (Iconos universales)</li>
+            <li>Metáforas visuales (Trash can = Eliminar)</li>
+          </ul>
+        </article>
+
+        <!-- Tarjeta 4 mejorada -->
+        <article class="topic-card">
+          <div class="card-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Tipografía digital" class="topic-icon">
+            <span class="card-badge">Tipografía</span>
+          </div>
+          <h3>Revolución Tipográfica</h3>
+          <p>De los mapas de bits a las fuentes vectoriales: cómo cambió la tipografía digital.</p>
+          <ul class="card-highlights">
+            <li>Bitmap vs Vector (Apple vs Adobe)</li>
+            <li>Hinting (Mejora de legibilidad)</li>
+            <li>Web Fonts (CSS @font-face)</li>
+            <li>Variable Fonts (Eficiencia moderna)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <MapaMental 
+    unit={1}
+    caption="Mapa interactivo - Haz zoom para detalles"
+    class="mi-estilo-personalizado"
+    />
+
+    <!-- Mapa Conceptual mejorado -->
+    <section class="concept-map">
+      <h2 class="section-title"><span>Mapa Conceptual</span></h2>
+      <div class="map-container">
+        <div class="map-legend">
+          <h3>Evolución Gráfica Digital</h3>
+          <ul class="legend-items">
+            <li><span class="legend-color hardware"></span> Hardware</li>
+            <li><span class="legend-color software"></span> Software</li>
+            <li><span class="legend-color theory"></span> Teoría</li>
+            <li><span class="legend-color design"></span> Diseño</li>
+          </ul>
+        </div>
+        <div class="map-content">
+          <div class="map-node hardware" style="top: 20%; left: 10%;">
+            <h4>1963 - Sketchpad</h4>
+            <p>Primer sistema gráfico interactivo</p>
+          </div>
+          <div class="map-node software" style="top: 30%; left: 30%;">
+            <h4>1973 - Xerox Alto</h4>
+            <p>Primera GUI con mouse</p>
+          </div>
+          <div class="map-node design" style="top: 50%; left: 50%;">
+            <h4>1984 - Macintosh</h4>
+            <p>Interfaz accesible al público</p>
+          </div>
+          <div class="map-node theory" style="top: 40%; left: 70%;">
+            <h4>1995 - Principios de HCI</h4>
+            <p>Norman, Nielsen</p>
+          </div>
+          <div class="map-node hardware" style="top: 70%; left: 30%;">
+            <h4>2007 - iPhone</h4>
+            <p>Interfaces táctiles</p>
+          </div>
+          <div class="map-node software" style="top: 80%; left: 70%;">
+            <h4>2020s - Realidad Mixta</h4>
+            <p>Nuevos paradigmas</p>
+          </div>
+          <div class="map-connections">
+            <svg width="100%" height="100%" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100,120 L300,180" stroke="#2563eb" stroke-width="2" fill="none" />
+              <path d="M300,180 L500,300" stroke="#10b981" stroke-width="2" fill="none" />
+              <path d="M500,300 L700,240" stroke="#f59e0b" stroke-width="2" fill="none" />
+              <path d="M300,180 L700,240" stroke="#7c3aed" stroke-width="2" fill="none" />
+              <path d="M300,180 L500,420" stroke="#2563eb" stroke-width="2" fill="none" />
+              <path d="M500,420 L700,480" stroke="#10b981" stroke-width="2" fill="none" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Glosario Visual mejorado -->
+    <section class="glossary">
+      <h2 class="section-title"><span>Glosario Visual</span></h2>
+      <div class="glossary-grid">
+        <!-- Concepto 1 mejorado -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2489/2489713.png" alt="Pixel" class="term-icon">
+            <h3>Pixel</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Unidad mínima de color en una imagen digital, contracción de "picture element".</p>
+            <p><strong>Ejemplo:</strong> Resolución de pantalla Full HD (1920×1080 píxeles).</p>
+            <p class="term-history"><strong>Historia:</strong> Primer uso en sistemas de radar (1940s).</p>
+          </div>
+        </div>
+
+        <!-- Concepto 2 mejorado -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2778/2778911.png" alt="Vector" class="term-icon">
+            <h3>Vector</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Gráfico basado en ecuaciones matemáticas (escalable sin pérdida de calidad).</p>
+            <p><strong>Ejemplo:</strong> Logotipos en formato SVG o fuentes TrueType.</p>
+            <p class="term-history"><strong>Historia:</strong> Desarrollado por Sutherland en Sketchpad (1963).</p>
+          </div>
+        </div>
+
+        <!-- Concepto 3 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/5436/5436761.png" alt="GUI" class="term-icon">
+            <h3>GUI</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Interfaz Gráfica de Usuario (Graphical User Interface).</p>
+            <p><strong>Ejemplo:</strong> Windows, macOS o entornos de escritorio modernos.</p>
+            <p class="term-history"><strong>Historia:</strong> Popularizada por Xerox Alto (1973).</p>
+          </div>
+        </div>
+
+        <!-- Concepto 4 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="WYSIWYG" class="term-icon">
+            <h3>WYSIWYG</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> "Lo que ves es lo que obtienes" (What You See Is What You Get).</p>
+            <p><strong>Ejemplo:</strong> Editores como Word o PageMaker.</p>
+            <p class="term-history"><strong>Historia:</strong> Acuñado por Flip Wilson (1970s).</p>
+          </div>
+        </div>
+
+        <!-- Concepto 5 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2885/2885257.png" alt="Bitmapping" class="term-icon">
+            <h3>Bitmapping</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Técnica de representación gráfica mediante mapa de bits.</p>
+            <p><strong>Ejemplo:</strong> Imágenes en formato BMP o JPG.</p>
+            <p class="term-history"><strong>Historia:</strong> Desarrollado en los años 60 para pantallas CRT.</p>
+          </div>
+        </div>
+
+        <!-- Concepto 6 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995459.png" alt="HCI" class="term-icon">
+            <h3>HCI</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Interacción Humano-Computadora (Human-Computer Interaction).</p>
+            <p><strong>Ejemplo:</strong> Diseño de interfaces intuitivas.</p>
+            <p class="term-history"><strong>Historia:</strong> Campo establecido en los años 80.</p>
+          </div>
+        </div>
+
+        <!-- Concepto 7 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/3246/3246741.png" alt="Antialiasing" class="term-icon">
+            <h3>Antialiasing</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Técnica para suavizar bordes pixelados.</p>
+            <p><strong>Ejemplo:</strong> Texto en pantallas LCD.</p>
+            <p class="term-history"><strong>Historia:</strong> Desarrollado en los 70 para mejorar legibilidad.</p>
+          </div>
+        </div>
+
+        <!-- Concepto 8 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Framebuffer" class="term-icon">
+            <h3>Framebuffer</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Memoria que almacena el estado de cada píxel.</p>
+            <p><strong>Ejemplo:</strong> Tarjetas gráficas modernas.</p>
+            <p class="term-history"><strong>Historia:</strong> Primer uso en computadoras Evans & Sutherland (1960s).</p>
+          </div>
+        </div>
+
+        <!-- Concepto 9 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/4231/4231272.png" alt="Rasterización" class="term-icon">
+            <h3>Rasterización</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Conversión de vectores a píxeles para visualización.</p>
+            <p><strong>Ejemplo:</strong> Renderizado de fuentes en pantalla.</p>
+            <p class="term-history"><strong>Historia:</strong> Técnica fundamental desde los primeros sistemas gráficos.</p>
+          </div>
+        </div>
+
+        <!-- Concepto 10 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/3161/3161837.png" alt="PostScript" class="term-icon">
+            <h3>PostScript</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Lenguaje de descripción de página basado en vectores.</p>
+            <p><strong>Ejemplo:</strong> Impresión de alta calidad.</p>
+            <p class="term-history"><strong>Historia:</strong> Desarrollado por Adobe en 1982.</p>
+          </div>
+        </div>
+
+        <!-- Concepto 11 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2777/2777154.png" alt="Metáfora" class="term-icon">
+            <h3>Metáfora de Interfaz</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Analogía que relaciona elementos digitales con objetos físicos.</p>
+            <p><strong>Ejemplo:</strong> Escritorio, carpetas, documentos.</p>
+            <p class="term-history"><strong>Historia:</strong> Popularizada por Xerox Star (1981).</p>
+          </div>
+        </div>
+
+        <!-- Concepto 12 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Sketchpad" class="term-icon">
+            <h3>Sketchpad</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Primer sistema CAD interactivo con GUI.</p>
+            <p><strong>Ejemplo:</strong> Precursor de herramientas como AutoCAD.</p>
+            <p class="term-history"><strong>Historia:</strong> Desarrollado por Ivan Sutherland (1963).</p>
+          </div>
+        </div>
+
+        <!-- Concepto 13 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="Xerox PARC" class="term-icon">
+            <h3>Xerox PARC</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Centro de investigación que desarrolló conceptos GUI modernos.</p>
+            <p><strong>Ejemplo:</strong> Ratón, ventanas, menús desplegables.</p>
+            <p class="term-history"><strong>Historia:</strong> Años 70, influenció Apple y Microsoft.</p>
+          </div>
+        </div>
+
+        <!-- Concepto 14 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/518/518705.png" alt="Skeuomorphismo" class="term-icon">
+            <h3>Skeuomorphismo</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Diseño que imita objetos físicos en interfaces digitales.</p>
+            <p><strong>Ejemplo:</strong> Notas de iOS con textura de papel.</p>
+            <p class="term-history"><strong>Historia:</strong> Popular en interfaces tempranas para facilitar adopción.</p>
+          </div>
+        </div>
+
+        <!-- Concepto 15 -->
+        <div class="term-card">
+          <div class="term-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/3024/3024559.png" alt="Flat Design" class="term-icon">
+            <h3>Flat Design</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Estilo minimalista sin efectos 3D o texturas.</p>
+            <p><strong>Ejemplo:</strong> Windows 8, Material Design.</p>
+            <p class="term-history"><strong>Historia:</strong> Popularizado a partir de 2010 como reacción al skeuomorphismo.</p>
+          </div>
+        </div>
+      </div>
+      <button id="abrirGlosario" class="btn-primary">Explorar Glosario Completo (15 términos)</button>
+    </section>
+
+    <!-- Reflexión Final mejorada -->
+    <section class="reflection">
+      <div class="reflection-card">
+        <h2 class="section-title"><span>Reflexión</span></h2>
+        <blockquote>
+          "Los sistemas gráficos no solo reflejan la tecnología de su época, sino también cómo entendemos y organizamos la información. Cada avance, desde el bitmap hasta el vector, ha redefinido nuestra relación con lo digital. La evolución de las interfaces gráficas muestra un patrón constante: primero imitamos el mundo físico para hacer lo digital comprensible, luego desarrollamos lenguajes visuales nativos del medio digital. Hoy estamos en una fase de madurez donde la simplicidad y la accesibilidad guían el diseño, pero el futuro con realidad aumentada y interfaces neuronales promete otra revolución."
+        </blockquote>
+        <div class="reflection-author">
+          <div class="author-meta">
+            <strong>Lección clave:</strong>
+            <p>La usabilidad actual se construye sobre décadas de investigación en interacción humano-computadora. Comprender esta historia nos ayuda a diseñar mejores interfaces para el futuro, aprendiendo de los aciertos y errores del pasado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer mejorado -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2024 Diseño Digital 1 - Historia de los Sistemas Gráficos</p>
+      <div class="footer-links">
+        <a href="#">Referencias bibliográficas</a>
+        <a href="#">Créditos iconográficos</a>
+        <a href="#">Accesibilidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Estilos mejorados -->
+  <style lang="scss">
+    :root {
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --primary-dark: #1e40af;
+      --dark: #1e293b;
+      --darker: #0f172a;
+      --light: #f8fafc;
+      --lighter: #ffffff;
+      --gray: #94a3b8;
+      --gray-light: #e2e8f0;
+      --accent: #f59e0b;
+      --design: #7c3aed;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      margin: 0;
+      background-color: var(--light);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* Hero Section mejorada */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--lighter);
+      padding: 5rem 2rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--accent);
+      }
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin: 1rem auto 2rem;
+      max-width: 600px;
+    }
+
+    .hero-timeline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+
+      span {
+        background: rgba(255,255,255,0.1);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+      }
+    }
+
+    .timeline-line {
+      flex-grow: 1;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+      max-width: 300px;
+    }
+
+    /* Sección títulos */
+    .section-title {
+      text-align: center;
+      margin: 3rem 0 2rem;
+      position: relative;
+
+      span {
+        background: var(--lighter);
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gray-light);
+        z-index: 1;
+      }
+    }
+
+    /* Grid de Temas mejorado */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .topic-card {
+      background: var(--lighter);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid var(--gray-light);
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+        border-color: var(--primary-light);
+      }
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .topic-icon {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    .card-badge {
+      background: var(--primary-light);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .topic-card h3 {
+      margin: 0.5rem 0 1rem;
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+    }
+
+    .card-highlights {
+      margin-top: auto;
+      padding-top: 1rem;
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+
+      li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: "•";
+          color: var(--accent);
+          position: absolute;
+          left: 0;
+          font-weight: bold;
+        }
+      }
+    }
+
+    /* Mapa Conceptual mejorado */
+    .map-container {
+      background: var(--lighter);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-light);
+      position: relative;
+      height: 600px;
+    }
+
+    .map-legend {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .legend-items {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .legend-color {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 0.5rem;
+
+      &.hardware { background: #2563eb; }
+      &.software { background: #10b981; }
+      &.theory { background: #f59e0b; }
+      &.design { background: #7c3aed; }
+    }
+
+    .map-content {
+      position: relative;
+      height: 500px;
+      width: 100%;
+      background-color: #f8fafc;
+      border-radius: 8px;
+    }
+
+    .map-node {
+      position: absolute;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 160px;
+      transform: translate(-50%, -50%);
+      border-top: 4px solid;
+
+      h4 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--dark);
+      }
+
+      &.hardware { border-color: #2563eb; }
+      &.software { border-color: #10b981; }
+      &.theory { border-color: #f59e0b; }
+      &.design { border-color: #7c3aed; }
+    }
+
+    .map-connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Glosario mejorado */
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin: 3rem 0;
+    }
+
+    .term-card {
+      background: var(--lighter);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-light);
+      transition: all 0.3s ease;
+    }
+
+    .term-header {
+      background: var(--primary);
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .term-icon {
+      width: 40px;
+      height: 40px;
+      filter: brightness(0) invert(1);
+    }
+
+    .term-card h3 {
+      color: white;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .term-body {
+      padding: 1.25rem;
+    }
+
+    .term-body p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .term-history {
+      font-size: 0.85rem;
+      color: var(--dark);
+      background: var(--gray-light);
+      padding: 0.5rem;
+      border-radius: 4px;
+      margin-top: 1rem !important;
+    }
+
+    /* Botón mejorado */
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      display: block;
+      margin: 3rem auto 0;
+      transition: all 0.3s;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+
+      &:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+      }
+    }
+
+    .reflection-card {
+      background: var(--darker);
+      color: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reflection-card::before {
+      content: "“";
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 5rem;
+      color: rgba(255, 255, 255, 0.05);
+      font-family: serif;
+      line-height: 1;
+    }
+
+    .reflection blockquote {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      quotes: "“" "”" "‘" "’";
+
+      &::before {
+        content: open-quote;
+        font-size: 4rem;
+        line-height: 0;
+        position: absolute;
+        left: -2rem;
+        top: 2rem;
+        color: var(--accent);
+        opacity: 0.3;
+      }
+    }
+
+    .reflection-author {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .author-meta {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      max-width: 400px;
+
+      strong {
+        color: var(--accent);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+    }
+
+    /* Footer mejorado */
+    .site-footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+      background: var(--darker);
+      color: white;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+
+      a {
+        color: var(--gray-light);
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1.5rem;
+      }
+
+      .reflection-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .section-title span {
+        padding: 0 1rem;
+      }
+
+      .map-container {
+        height: auto;
+        padding: 1rem;
+      }
+
+      .map-content {
+        height: 400px;
+      }
+
+      .map-node {
+        width: 120px;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      .glossary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- Script para futura integración del popup -->
+  <script>
+    document.getElementById('abrirGlosario')?.addEventListener('click', () => {
+      alert('🔮 Este botón activará el componente GlosarioPopup.astro en el futuro');
+    });
+  </script>
+</body>
+</html>

@@ -1,16 +1,793 @@
 ---
+// src/pages/index.astro
+import Header from '../components/Header.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 
+// Variables CSS reutilizables
+const primaryColor = '#2563EB';
+const accentColor = '#7C3AED';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  <Header />
+  
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 id="hero-title">Domina el <span class="text-gradient">Diseño Digital</span></h1>
+          <p class="hero-subtitle">Desde los primeros píxeles hasta las interfaces accesibles del futuro</p>
+          <div class="hero-actions">
+            <a href="#unidades" class="button primary">Explorar Unidades</a>
+            <a href="#video-intro" class="button secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 8L16 12L10 16V8Z" fill="currentColor"/>
+              </svg>
+              Ver introducción
+            </a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="media-placeholder" role="img" aria-label="Ilustración de diseño digital">
+            <svg width="100%" height="100%" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="300" rx="16" fill="url(#gradient)"/>
+              <path d="M100 100L150 150L100 200" stroke="white" stroke-width="4" stroke-linecap="round"/>
+              <path d="M200 100L250 150L200 200" stroke="white" stroke-width="4" stroke-linecap="round"/>
+              <path d="M300 100L350 150L300 200" stroke="white" stroke-width="4" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color={primaryColor}/>
+                  <stop offset="100%" stop-color={accentColor}/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <a href="#unidades" class="scroll-indicator" aria-label="Desplazarse hacia abajo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" aria-labelledby="stats-title">
+      <h2 id="stats-title" class="visually-hidden">Estadísticas del curso</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Unidades completas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">Temas especializados</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Proyectos prácticos</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Enfoque aplicado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Units Section -->
+    <section id="unidades" class="units" aria-labelledby="units-title">
+      <div class="section-header">
+        <h2 id="units-title">Unidades de Aprendizaje</h2>
+        <p class="section-description">Un viaje completo desde los fundamentos hasta las técnicas avanzadas</p>
+      </div>
+      
+      <!-- Unit 1 -->
+      <article class="unit-card">
+        <div class="unit-content">
+          <span class="unit-badge">Unidad 1</span>
+          <h3>Génesis de los Sistemas Gráficos</h3>
+          <div class="unit-details">
+            <h4>Temas principales:</h4>
+            <ul class="topics-list">
+              <li>Historia y evolución de interfaces</li>
+              <li>Metáforas digitales</li>
+              <li>Diseño de íconos</li>
+              <li>Fundamentos visuales</li>
+            </ul>
+          </div>
+          <div class="unit-resources">
+            <h4>Recursos destacados:</h4>
+            <div class="resources-grid">
+              <a href="/unidad-1" class="resource-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M23 7L16 12L23 17V7Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M14 5H3V19H14V5Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Historia del diseño UI
+              </a>
+              <a href="/unidad-1" class="resource-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 16L10 10L13 13L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M14 6H20V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Evolución de interfaces
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="unit-preview">
+          <div class="preview-placeholder" aria-hidden="true">
+
+              <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube-nocookie.com/embed/ivdNulDcKBc?si=RbJru6sJuLHoCvN2"
+              title="YouTube video player"
+              frameborder="0" 
+              allow="accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media; 
+              gyroscope;
+              picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+              </iframe>
+
+          </div>
+        </div>
+      </article>
+      
+      <!-- Unit 2 -->
+      <article class="unit-card">
+        <div class="unit-content">
+          <span class="unit-badge">Unidad 2</span>
+          <h3>Actualidad en Diseño UI</h3>
+          <div class="unit-details">
+            <h4>Temas principales:</h4>
+            <ul class="topics-list">
+              <li>Panorama del diseño UI moderno</li>
+              <li>Ética y manejo de datos</li>
+              <li>Comunicación en redes sociales</li>
+              <li>Diseño para videojuegos</li>
+            </ul>
+          </div>
+          <div class="unit-resources">
+            <h4>Recursos destacados:</h4>
+            <div class="resources-grid">
+              <a href="/unidad-2" class="resource-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                  <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Submarine Cable Map
+              </a>
+              <a href="/unidad-2" class="resource-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 21H3V3H11V5H5V19H19V13H21V21Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M21 10H14V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Google Trends
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="unit-preview">
+          <div class="preview-placeholder" aria-hidden="true">
+          
+              <iframe width="100%"
+              height="100%"
+              src="https://www.youtube-nocookie.com/embed/ABggYX2jOsM?si=tUPHLBcnIrEvlYo1"
+              title="YouTube video player" frameborder="0" allow="accelerometer;
+              autoplay; 
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+              </iframe>
+
+          </div>
+        </div>
+      </article>
+      
+      <!-- Unit 3 -->
+      <article class="unit-card">
+        <div class="unit-content">
+          <span class="unit-badge">Unidad 3</span>
+          <h3>Accesibilidad Web</h3>
+          <div class="unit-details">
+            <h4>Temas principales:</h4>
+            <ul class="topics-list">
+              <li>Pautas WCAG 2.0</li>
+              <li>Herramientas de evaluación</li>
+              <li>Diseño inclusivo</li>
+              <li>Contraste y legibilidad</li>
+            </ul>
+          </div>
+          <div class="unit-resources">
+            <h4>Recursos destacados:</h4>
+            <div class="resources-grid">
+              <a href="/unidad-3" class="resource-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Verificador de contrastes
+              </a>
+              <a href="/unidad-3" class="resource-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                WCAG 2.1 Quick Ref
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="unit-preview">
+          <div class="preview-placeholder" aria-hidden="true">
+          
+            <iframe width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/5H1JGdqLrWo?si=aAKkL6ODTjFVkUBo" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; 
+            autoplay;
+            clipboard-write; 
+            encrypted-media; 
+            gyroscope; 
+            picture-in-picture;
+             web-share" 
+             referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <div class="section-header">
+        <h2 id="testimonials-title">Lo que dicen los estudiantes</h2>
+        <p class="section-description">Experiencias de quienes ya han recorrido este camino</p>
+      </div>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial-card">
+          <p>"El enfoque práctico de las unidades transformó mi manera de entender el diseño digital."</p>
+          <footer>
+            <div class="author">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <span>Ana M., Diseñadora UX</span>
+            </div>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>"Los recursos de accesibilidad fueron reveladores para mi trabajo en desarrollo web."</p>
+          <footer>
+            <div class="author">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <span>Carlos P., Desarrollador Frontend</span>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">¿Listo para dominar el Diseño Digital?</h2>
+      <p class="cta-description">Comienza tu viaje hoy mismo</p>
+      <div class="cta-actions">
+        <a href="#unidades" class="button primary">Explorar Contenido</a>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
+<style lang="scss">
+  /* Variables CSS */
+  :root {
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --accent: #7C3AED;
+    --dark: #1E293B;
+    --light: #F8FAFC;
+    --gray-light: #E2E8F0;
+    --white: #FFFFFF;
+    
+    --text-base: 1rem;
+    --text-scale: 1.25;
+    --text-xs: calc(var(--text-base) / var(--text-scale));
+    --text-sm: calc(var(--text-base) * var(--text-scale));
+    --text-md: calc(var(--text-sm) * var(--text-scale));
+    --text-lg: calc(var(--text-md) * var(--text-scale));
+    --text-xl: calc(var(--text-lg) * var(--text-scale));
+    
+    --space-unit: 1rem;
+    --space-xs: calc(var(--space-unit) / 2);
+    --space-sm: var(--space-unit);
+    --space-md: calc(var(--space-unit) * 1.5);
+    --space-lg: calc(var(--space-unit) * 2);
+    --space-xl: calc(var(--space-unit) * 3);
+    
+    --border-radius: 8px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Base Styles */
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-xl) 0;
+    position: relative;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .hero-text {
+    z-index: 2;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-md);
+    color: var(--dark);
+    margin-bottom: var(--space-lg);
+    max-width: 500px;
+    opacity: 0.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .button {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+  }
+
+  .button.primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+  }
+
+  .button.primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .button.secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+
+  .button.secondary:hover {
+    background: rgba(37, 99, 235, 0.1);
+  }
+
+  .hero-media {
+    position: relative;
+    height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .media-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: var(--primary);
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+  }
+
+  /* Stats Section */
+  .stats {
+    padding: var(--space-xl) 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stat-card {
+    background: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .stat-number {
+    font-size: var(--text-xl);
+    color: var(--primary);
+    margin-bottom: var(--space-xs);
+    font-weight: 700;
+    display: block;
+  }
+
+  .stat-label {
+    color: var(--dark);
+    opacity: 0.8;
+    font-size: var(--text-sm);
+  }
+
+  /* Units Section */
+  .units {
+    padding: var(--space-xl) 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-header h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--dark);
+  }
+
+  .section-description {
+    color: var(--dark);
+    opacity: 0.8;
+    font-size: var(--text-sm);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .unit-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-xl);
+    transition: var(--transition);
+  }
+
+  .unit-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+  }
+
+  .unit-content {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .unit-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    align-self: flex-start;
+  }
+
+  .unit-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-md);
+    color: var(--dark);
+  }
+
+  .unit-details h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xs);
+    color: var(--dark);
+  }
+
+  .topics-list {
+    list-style: none;
+    margin-bottom: var(--space-lg);
+  }
+
+  .topics-list li {
+    position: relative;
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-xs);
+    color: var(--dark);
+  }
+
+  .topics-list li::before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+  }
+
+  .unit-resources h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-sm);
+    color: var(--dark);
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--gray-light);
+    border-radius: calc(var(--border-radius) / 2);
+    color: var(--dark);
+    text-decoration: none;
+    font-size: var(--text-xs);
+    transition: var(--transition);
+  }
+
+  .resource-link:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+  }
+
+  .unit-preview {
+    position: relative;
+    min-height: 400px;
+    background: var(--gray-light);
+  }
+
+  .preview-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    opacity: 0.8;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    padding: var(--space-xl) 0;
+    color: var(--white);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+    max-width: 1200px;
+    margin: var(--space-xl) auto 0;
+  }
+
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    transition: var(--transition);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: var(--space-md);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .author svg {
+    flex-shrink: 0;
+  }
+
+  /* Final CTA */
+  .cta {
+    text-align: center;
+    padding: var(--space-xl) 0;
+  }
+
+  .cta h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--dark);
+  }
+
+  .cta-description {
+    color: var(--dark);
+    opacity: 0.8;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .hero-text {
+      margin-bottom: var(--space-xl);
+    }
+    
+    .hero-actions {
+      justify-content: center;
+    }
+    
+    .unit-card {
+      grid-template-columns: 1fr;
+    }
+    
+    .unit-preview {
+      min-height: 300px;
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: var(--space-xl) 0;
+    }
+    
+    .resources-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    .scroll-indicator, 
+    .hero-media, 
+    .stat-card, 
+    .unit-card, 
+    .testimonial-card,
+    .button {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.setProperty('--transition', 'none');
+    }
+  });
+</script>

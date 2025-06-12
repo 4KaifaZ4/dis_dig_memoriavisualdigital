@@ -1,0 +1,774 @@
+---
+import Header from '../components/Header.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import MapaMental from '../components/MapaMental.astro';
+import GlosarioPopup from '../components/GlosarioPopup.astro';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Unidad 2: Actualidad en Diseño UI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora tendencias UI, ética digital y diseño para videojuegos con ejemplos interactivos">
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- Íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <Header />
+  
+  <main class="container">
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Actualidad en Diseño UI</h1>
+        <p class="hero-subtitle">Tendencias, ética y herramientas que definen las interfaces digitales hoy</p>
+        <div class="hero-trends">
+          <span class="trend-badge">Dark Mode</span>
+          <span class="trend-badge">Microinteracciones</span>
+          <span class="trend-badge">Glassmorphism</span>
+        </div>
+      </div>
+      <div class="video-wrapper">
+        
+          <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube-nocookie.com/embed/ZzMlJPhjAE4?si=VhOOI41nNxES7DA9" 
+          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+          clipboard-write; 
+          encrypted-media; 
+          gyroscope; 
+          picture-in-picture; 
+          web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+
+      </div>
+    </section>
+
+    <!-- ===== TEMAS PRINCIPALES ===== -->
+    <section class="topics-section">
+      <h2 class="section-title"><span>Temas Clave</span></h2>
+      <div class="topics-grid">
+        
+        <!-- Tarjeta 1 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-mobile-alt topic-icon"></i>
+            <span class="card-badge">Tendencias</span>
+          </div>
+          <h3>Panorama del Diseño UI</h3>
+          <p>Micro-interacciones, glassmorphism y dark mode en plataformas actuales.</p>
+          <ul class="card-highlights">
+            <li>Animaciones fluidas</li>
+            <li>Neumorfismo</li>
+            <li>Diseño inclusivo</li>
+          </ul>
+          <a href="https://www.figma.com/community/file/1016563802318356783" target="_blank" class="card-link">
+            Ver ejemplos en Figma <i class="fas fa-external-link-alt"></i>
+          </a>
+        </article>
+        
+        <!-- Tarjeta 2 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-shield-alt topic-icon"></i>
+            <span class="card-badge">Ética</span>
+          </div>
+          <h3>Ética y Manejo de Datos</h3>
+          <p>Privacidad, diseño persuasivo y regulaciones (GDPR, LGPD).</p>
+          <ul class="card-highlights">
+            <li>Consentimiento informado</li>
+            <li>Dark patterns</li>
+            <li>Transparencia</li>
+          </ul>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-hashtag topic-icon"></i>
+            <span class="card-badge">Redes</span>
+          </div>
+          <h3>Comunicación en Redes</h3>
+          <p>Patrones de diseño para engagement y accesibilidad.</p>
+          <ul class="card-highlights">
+            <li>Jerarquía visual</li>
+            <li>Contenido snackable</li>
+            <li>Accesibilidad</li>
+          </ul>
+        </article>
+
+        <!-- Tarjeta 4 -->
+        <article class="topic-card">
+          <div class="card-header">
+            <i class="fas fa-gamepad topic-icon"></i>
+            <span class="card-badge">Gaming</span>
+          </div>
+          <h3>Diseño para Videojuegos</h3>
+          <p>UX en juegos: HUDs, feedback táctil y narrativa visual.</p>
+          <ul class="card-highlights">
+            <li>HUD no intrusivo</li>
+            <li>Feedback inmediato</li>
+            <li>Onboarding progresivo</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <MapaMental 
+    unit={2}
+    caption="Mapa interactivo - Haz zoom para detalles"
+    class="mi-estilo-personalizado"
+    />
+
+    <!-- ===== GLOSARIO VISUAL ===== -->
+    <section class="glossary">
+      <h2 class="section-title"><span>Glosario Visual</span></h2>
+      <div class="glossary-grid">
+        
+        <!-- Término 1 -->
+        <div class="term-card">
+          <div class="term-header">
+            <i class="fas fa-moon term-icon"></i>
+            <h3>Dark Mode</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Interfaz con fondo oscuro para reducir fatiga visual y consumo energético.</p>
+            <p><strong>Ejemplo:</strong> 
+              <a href="https://twitter.com" target="_blank">Twitter</a>, 
+              <a href="https://youtube.com" target="_blank">YouTube</a>
+            </p>
+            <p class="term-history"><strong>Impacto:</strong> Reduce hasta 60% de consumo en pantallas OLED.</p>
+          </div>
+        </div>
+        
+        <!-- Término 2 -->
+        <div class="term-card">
+          <div class="term-header">
+            <i class="fas fa-gavel term-icon"></i>
+            <h3>GDPR</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Regulación europea para protección de datos personales.</p>
+            <p><strong>Ejemplo:</strong> Popups de consentimiento en webs europeas.</p>
+            <p class="term-history"><strong>Desde:</strong> Implementado en mayo 2018.</p>
+          </div>
+        </div>
+        
+        <!-- Término 3 -->
+        <div class="term-card">
+          <div class="term-header">
+            <i class="fas fa-hand-pointer term-icon"></i>
+            <h3>Microinteracción</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Animaciones que responden a acciones del usuario.</p>
+            <p><strong>Ejemplo:</strong> Efecto al dar "like" en redes sociales.</p>
+            <p class="term-history"><strong>Objetivo:</strong> Mejorar percepción de respuesta inmediata.</p>
+          </div>
+        </div>
+        
+        <!-- Término 4 -->
+        <div class="term-card">
+          <div class="term-header">
+            <i class="fas fa-layer-group term-icon"></i>
+            <h3>Glassmorphism</h3>
+          </div>
+          <div class="term-body">
+            <p><strong>Definición:</strong> Efecto vidrio esmerilado con desenfoque.</p>
+            <p><strong>Ejemplo:</strong> Paneles traslúcidos en iOS.</p>
+            <p class="term-history"><strong>Tendencia:</strong> Popularizado en 2020-2021.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GLOSARIO VISUAL ===== -->
+<section class="glossary">
+  <h2 class="section-title"><span></span></h2>
+  <div class="glossary-grid">
+    
+    <!-- Término 5 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-users term-icon"></i>
+        <h3>Web 2.0</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Evolución web con usuarios activos y contenido generado por comunidades.</p>
+        <p><strong>Ejemplo:</strong> 
+          <a href="https://wikipedia.org" target="_blank">Wikipedia</a>, 
+          <a href="https://reddit.com" target="_blank">Reddit</a>
+        </p>
+        <p class="term-history"><strong>Característica:</strong> Plataformas colaborativas con interacción social.</p>
+      </div>
+    </div>
+    
+    <!-- Término 6 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-mobile-alt term-icon"></i>
+        <h3>Responsive Design</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Adaptación automática de interfaces a distintos dispositivos.</p>
+        <p><strong>Ejemplo:</strong> Menús que cambian a hamburguesa en móviles.</p>
+        <p class="term-history"><strong>Desde:</strong> Término acuñado por Ethan Marcotte en 2010.</p>
+      </div>
+    </div>
+    
+    <!-- Término 7 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-search term-icon"></i>
+        <h3>SEO</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Optimización para motores de búsqueda sin pago.</p>
+        <p><strong>Ejemplo:</strong> Uso estratégico de keywords en contenido.</p>
+        <p class="term-history"><strong>Impacto:</strong> 53% del tráfico web viene de búsquedas orgánicas.</p>
+      </div>
+    </div>
+    
+    <!-- Término 8 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-ad term-icon"></i>
+        <h3>SEM</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Estrategias de marketing de pago en buscadores.</p>
+        <p><strong>Ejemplo:</strong> Anuncios patrocinados en Google.</p>
+        <p class="term-history"><strong>Costo:</strong> CPC promedio entre $1-$2 en la mayoría de industrias.</p>
+      </div>
+    </div>
+
+    <!-- Término 9 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-gamepad term-icon"></i>
+        <h3>Gameplay</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Mecánicas y dinámicas que definen la experiencia de juego.</p>
+        <p><strong>Ejemplo:</strong> Sistemas de combate en RPGs.</p>
+        <p class="term-history"><strong>Importancia:</strong> Factor clave en retención de jugadores.</p>
+      </div>
+    </div>
+
+    <!-- Término 10 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-globe term-icon"></i>
+        <h3>IPv6</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Nueva versión de protocolo IP para direccionamiento web.</p>
+        <p><strong>Ejemplo:</strong> Direcciones como 2001:0db8:85a3::8a2e:0370:7334</p>
+        <p class="term-history"><strong>Necesidad:</strong> Soluciona agotamiento de direcciones IPv4.</p>
+      </div>
+    </div>
+
+    <!-- Término 11 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-brain term-icon"></i>
+        <h3>Storytelling</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Técnica narrativa para conectar emocionalmente con audiencias.</p>
+        <p><strong>Ejemplo:</strong> Campañas con arcos narrativos en redes sociales.</p>
+        <p class="term-history"><strong>Efectividad:</strong> 22x más memorable que datos puros.</p>
+      </div>
+    </div>
+
+    <!-- Término 12 -->
+    <div class="term-card">
+      <div class="term-header">
+        <i class="fas fa-robot term-icon"></i>
+        <h3>Bots de rastreo</h3>
+      </div>
+      <div class="term-body">
+        <p><strong>Definición:</strong> Programas que indexan contenido web para motores de búsqueda.</p>
+        <p><strong>Ejemplo:</strong> Googlebot, Bingbot</p>
+        <p class="term-history"><strong>Función:</strong> Analizan ~130TB diarios de datos web.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- ===== REFLEXIÓN ===== -->
+    <section class="reflection">
+      <div class="reflection-card">
+        <h2 class="section-title"><span>Reflexión</span></h2>
+        <blockquote>
+          "El diseño UI ya no es solo estética; es una responsabilidad ética con el usuario. Cada decisión de diseño puede influir en el comportamiento, privacidad y bienestar digital."
+        </blockquote>
+        <div class="reflection-author">
+          <div class="author-meta">
+            <strong>Lección clave:</strong>
+            <p>El equilibrio entre engagement y ética define el diseño contemporáneo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2024 Diseño Digital Avanzado - Tendencias UI Actuales</p>
+      <div class="footer-links">
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+          <i class="fab fa-creative-commons"></i> Licencia CC BY 4.0
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== ESTILOS ===== -->
+  <style lang="scss">
+    :root {
+      --primary: #7c3aed;
+      --primary-light: #8b5cf6;
+      --primary-dark: #6d28d9;
+      --accent: #f59e0b;
+      --dark: #1e293b;
+      --darker: #0f172a;
+      --light: #f8fafc;
+      --lighter: #ffffff;
+      --gray: #94a3b8;
+      --gray-light: #e2e8f0;
+    }
+
+    /* Estructura base */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      margin: 0;
+      background-color: var(--light);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: var(--lighter);
+      padding: 4rem 2rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin: 1rem auto 2rem;
+      max-width: 600px;
+    }
+
+    .hero-trends {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .trend-badge {
+      background: rgba(255,255,255,0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .video-wrapper {
+      margin: 2rem auto 0;
+      max-width: 800px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Sección títulos */
+    .section-title {
+      text-align: center;
+      margin: 3rem 0 2rem;
+      position: relative;
+
+      span {
+        background: var(--lighter);
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gray-light);
+        z-index: 1;
+      }
+    }
+
+    /* Grid de Temas */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .topic-card {
+      background: var(--lighter);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid var(--gray-light);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+      border-color: var(--primary-light);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .topic-icon {
+      font-size: 1.75rem;
+      color: var(--primary);
+    }
+
+    .card-badge {
+      background: var(--primary-light);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .topic-card h3 {
+      margin: 0.5rem 0 1rem;
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+    }
+
+    .card-highlights {
+      margin-top: auto;
+      padding-top: 1rem;
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+
+      li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: "•";
+          color: var(--accent);
+          position: absolute;
+          left: 0;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      color: var(--primary);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--primary-dark);
+      }
+    }
+
+    /* Mapa Conceptual */
+    .map-container {
+      background: var(--lighter);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-light);
+    }
+
+    .map-legend {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .legend-items {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .legend-color {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 0.5rem;
+
+      &.trends { background: #7c3aed; }
+      &.ethics { background: #10b981; }
+      &.tech { background: #f59e0b; }
+    }
+
+    .map-image {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .map-caption {
+      text-align: center;
+      font-style: italic;
+      color: var(--gray);
+      margin-top: 1rem;
+    }
+
+    /* Glosario */
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.75rem;
+      margin: 3rem 0;
+    }
+
+    .term-card {
+      background: var(--lighter);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-light);
+      transition: all 0.3s ease;
+    }
+
+    .term-header {
+      background: var(--primary);
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .term-icon {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .term-card h3 {
+      color: white;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .term-body {
+      padding: 1.25rem;
+    }
+
+    .term-body p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .term-history {
+      font-size: 0.85rem;
+      color: var(--dark);
+      background: var(--gray-light);
+      padding: 0.5rem;
+      border-radius: 4px;
+      margin-top: 1rem !important;
+    }
+
+    /* Botón */
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 3rem auto 0;
+      transition: all 0.3s;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(124, 58, 237, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(124, 58, 237, 0.3);
+    }
+
+    /* Reflexión */
+    .reflection-card {
+      background: var(--darker);
+      color: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reflection blockquote {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      quotes: "“" "”" "‘" "’";
+    }
+
+    .reflection-author {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .author-meta {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      max-width: 400px;
+
+      strong {
+        color: var(--accent);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+      background: var(--darker);
+      color: white;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+
+      a {
+        color: var(--gray-light);
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .reflection-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .section-title span {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+
+  <!-- Script básico para funcionalidad -->
+  <script>
+    document.getElementById('abrirGlosario')?.addEventListener('click', () => {
+      alert('🔮 Este botón activará el componente GlosarioPopup.astro en el futuro');
+    });
+  </script>
+</body>
+</html>

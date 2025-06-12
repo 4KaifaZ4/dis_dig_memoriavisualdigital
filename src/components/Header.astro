@@ -1,0 +1,285 @@
+---
+// src/components/Header.astro
+---
+
+<header class="navbar" role="banner">
+  <nav class="nav-container" aria-label="Menú principal">
+    <a href="/" class="logo" aria-label="Inicio - Diseño Digital 1">
+      <span class="logo-text">Diseño Digital</span>
+      <span class="logo-highlight" aria-hidden="true"></span>
+    </a>
+
+    <button class="mobile-menu-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="main-menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <div id="main-menu" class="nav-links" role="navigation">
+      <a href="/unidad-1" class="nav-link">
+        <span class="nav-link-text">Unidad 1</span>
+        <span class="nav-link-deco" aria-hidden="true"></span>
+      </a>
+      <a href="/unidad-2" class="nav-link">
+        <span class="nav-link-text">Unidad 2</span>
+        <span class="nav-link-deco" aria-hidden="true"></span>
+      </a>
+      <a href="/unidad-3" class="nav-link">
+        <span class="nav-link-text">Unidad 3</span>
+        <span class="nav-link-deco" aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style lang="scss">
+.navbar {
+  /* Paleta profesional accesible (WCAG AA+) */
+  --primary: #2563EB;       // Azul corporativo (contraste 4.7:1)
+  --primary-hover: #1D4ED8; // Azul más oscuro (contraste 7:1)
+  --accent: #7C3AED;       // Púrpura para highlights
+  --dark: #1E293B;         // Texto principal (contraste 12:1)
+  --light: #F8FAFC;        // Fondo claro
+  --gray-light: #E2E8F0;   // Bordes
+  --white: #FFFFFF;
+
+  /* Variables estructurales */
+  --nav-height: 80px;
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Logo - Efecto sutil */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+
+  &-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-speed) ease-out;
+    border-radius: 2px;
+  }
+
+  &:hover &-highlight {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: var(--border-radius);
+  }
+}
+
+/* Navegación principal */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-150%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+
+    &.active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--transition-speed);
+
+  &-deco {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-speed);
+  }
+
+  &:hover,
+  &[aria-current="page"] {
+    color: var(--primary);
+
+    .nav-link-deco {
+      transform: scaleX(1);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: var(--border-radius);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Botón CTA */
+.cta-link {
+  background: var(--primary);
+  color: var(--white) !important;
+  padding: 0.6rem 1.2rem !important;
+  border-radius: var(--border-radius);
+  transition: background var(--transition-speed), transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+
+  .arrow-icon {
+    transition: transform var(--transition-speed);
+  }
+
+  &:hover .arrow-icon {
+    transform: translateX(2px);
+  }
+}
+
+/* Menú móvil */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  border-radius: var(--border-radius);
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    position: relative;
+    transition: background 0.2s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      transition: transform 0.3s ease;
+    }
+
+    &::before {
+      top: -6px;
+    }
+
+    &::after {
+      top: 6px;
+    }
+  }
+
+  &[aria-expanded="true"] .hamburger {
+    background: transparent;
+
+    &::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.getElementById('main-menu');
+
+  // Toggle del menú móvil
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    menu.classList.toggle('active');
+    document.body.style.overflow = expanded ? '' : 'hidden';
+  });
+
+  // Cerrar menú al seleccionar enlace (móvil)
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+});
+</script>

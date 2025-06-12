@@ -1,0 +1,152 @@
+---
+// src/layouts/MainLayout.astro
+const { 
+  title = "Diseño Digital | Evolución, UI/UX y Accesibilidad",
+  description = "Domina la historia de los sistemas gráficos, diseño UI/UX actual y accesibilidad web con metodología práctica.",
+  canonicalUrl = "https://tusitio.com",
+  ogImage = "https://tusitio.com/og-image.jpg"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Favicon (SVG recomendado) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+  
+  <!-- Metatags SEO -->
+  <meta name="theme-color" content="#2563EB">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:image" content={ogImage}>
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Preconexión para mejor rendimiento -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl}>
+  
+  <!-- Estilos críticos inline -->
+  <style>
+    /* Fuentes del sistema - Optimizado para rendimiento */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    /* Variables CSS */
+    :root {
+      /* Paleta accesible (WCAG AA+) */
+      --primary: #2563EB;
+      --primary-hover: #1D4ED8;
+      --accent: #7C3AED;
+      --dark: #1E293B;
+      --light: #F8FAFC;
+      --gray-light: #E2E8F0;
+      --white: #FFFFFF;
+      
+      /* Tipografía */
+      --text-base: 1rem;
+      --text-scale: 1.25;
+      --text-xs: calc(var(--text-base) / var(--text-scale));
+      --text-sm: calc(var(--text-base) * var(--text-scale));
+      --text-md: calc(var(--text-sm) * var(--text-scale));
+      --text-lg: calc(var(--text-md) * var(--text-scale));
+      --text-xl: calc(var(--text-lg) * var(--text-scale));
+      
+      /* Espaciado */
+      --space-unit: 1rem;
+      --space-xs: calc(var(--space-unit) / 2);
+      --space-sm: var(--space-unit);
+      --space-md: calc(var(--space-unit) * 1.5);
+      --space-lg: calc(var(--space-unit) * 2);
+      --space-xl: calc(var(--space-unit) * 3);
+      
+      /* Transiciones */
+      --transition-speed: 0.3s;
+      --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset básico accesible */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos base del documento */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      min-height: 100vh;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Accesibilidad */
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <slot /> <!-- Contenido de las páginas -->
+  
+  <!-- Scripts esenciales optimizados -->
+  <script is:inline>
+    (function() {
+      // Detectar preferencias inmediatamente
+      if (window.matchMedia('(prefers-reduced-motion: reduce').matches) {
+        document.documentElement.style.setProperty('--transition-speed', '0s');
+      }
+      
+      // Carga diferida de elementos no críticos
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(loadNonCriticalResources);
+      } else {
+        window.addEventListener('load', loadNonCriticalResources);
+      }
+      
+      function loadNonCriticalResources() {
+        // Cargar recursos no esenciales aquí
+      }
+    })();
+  </script>
+</body>
+</html>
